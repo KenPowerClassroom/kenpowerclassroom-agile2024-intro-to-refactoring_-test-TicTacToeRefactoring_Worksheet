@@ -104,7 +104,15 @@ Was it easy to change given your refactoring?
  Just to have something to work with, we’ll call a win worth 100 points, and any other move 0 points.
  (We can imagine a winning move by the other player being worth -100 points, but we don’t check for those — yet.)
  
- A smarter program would be able to score each valid move: There might be moves woth 100(win), moves worth -100(lose) and moves with scores inbetween.
+ A smarter program would be able to score each valid move: There might be moves worth 100(win), moves worth -100(lose) and moves with scores inbetween.
+
+ e.g. a move that gives a line with 2 of my squares and a blank (in any order) is a better move than two disconnected squares (the left hand picture is a better position for X than the right hand picture):
+
+```
+ X-O    X-O
+ ---    ---
+ X--    -X- 
+```
  
  With scoring in place we would like to return the *best* available move, the move with the higest score.
  
